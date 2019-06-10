@@ -33,12 +33,14 @@ def open_site(site):
         return None
 
 
-def traverse_table(table):
+def get_options(table):
     # print(table)
     trs = table.find_all('tr')
     # print(trs)
-    target_trs = []
+    options = {'call': [],
+               'put': []}
     # get rows that have data
+    target_trs = []
     for i in range(len(trs)):
         if trs[i].get('id') == 'start_pos':
             target_trs = trs[i:]
@@ -50,7 +52,7 @@ def traverse_table(table):
         #     print(td.contents)
         call_vol = columns[0].contents
         call_chg = columns[1].contents
-        call_last = columns[2].contents
+        call_last = columns[2].span.contents
         call_bid = columns[3].contents
         call_ask = columns[4].contents
 
@@ -58,16 +60,18 @@ def traverse_table(table):
 
         put_vol = columns[8].contents
         put_chg = columns[9].contents
-        put_last = columns[10].contents
+        put_last = columns[10].span.contents
         put_bid = columns[11].contents
         put_ask = columns[12].contents
 
         call = Option(call_vol, call_chg, call_last, call_bid, call_ask, strike)
         put = Option(put_vol, put_chg, put_last, put_bid, put_ask, strike)
-        print(json.dumps(call.__dict__))
-        print(json.dumps(put.__dict__))
-        print('------------------------------------------------------')
-    pass
+        options['call'].append(call)
+        options['put'].append(put)
+        # print(call)
+        # print(put)
+        # print('------------------------------------------------------')
+    return options
 
 
 def scrap(code, month):
@@ -76,9 +80,12 @@ def scrap(code, month):
     body = open_site(scrap_url)
     table = body.find("table", id="content")
     if table is not None and table is not '':
-        traverse_table(table)
+        result = get_options(table)
+        print(json.dumps(result, indent=4, sort_keys=True, default=lambda x: x.__dict__))
+        return result
     else:
         print('no table')
+        return []
 
 
 scrap('CNC', '201906')

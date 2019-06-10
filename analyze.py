@@ -1,3 +1,5 @@
+from scrap import scrap
+
 TAG_STRIKEPRICE = 'strike_price'
 TAG_PRICE = 'price'
 
@@ -22,7 +24,13 @@ put_option = {
 }
 
 
-def short_call_w_asset():
+def short_call_w_asset(code, month):
+    options = scrap(code, month)
+    call_options = options['call']
+
+    # TODO loop to analyse
+    for option in call_options:
+        break
     # loss_at_stock_price = stock_price - call_option[TAG_PRICE]
     loss_max = VAL_UNLIMIT
     even_price = stock_price - call_option[TAG_PRICE]

@@ -1,4 +1,4 @@
-from json import JSONEncoder
+import json
 
 
 class Option:
@@ -10,7 +10,13 @@ class Option:
         self.ask = ask
         self.strike = strike
 
+    def __str__(self):
+        return str({'vol': self.vol, 'chg': self.chg, 'last': self.last, 'bid': self.bid, 'ask': self.ask,
+                    'strike': self.strike})
 
-class OptionEncoder(JSONEncoder):
-    def default(self, o):
-        return o.__dict__
+    # def toJSON(self):
+    #     return json.dumps(self, default=lambda o: o.__dict__,
+    #                       sort_keys=True, indent=4)
+# class OptionEncoder(JSONEncoder):
+#     def default(self, o):
+#         return o.__dict__
