@@ -25,25 +25,26 @@ put_option = {
 
 
 def short_call_w_asset(code, month):
-    options = scrap(code, month)
-    call_options = options['call']
-
-    # TODO loop to analyse
+    result = scrap(code, month)
+    call_options = result['option']['call']
+    stock = result['stock']
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
     for option in call_options:
-        break
-    # loss_at_stock_price = stock_price - call_option[TAG_PRICE]
-    loss_max = VAL_UNLIMIT
-    even_price = stock_price - call_option[TAG_PRICE]
-    execute_at = call_option[TAG_STRIKEPRICE]
-    win_max = call_option[TAG_PRICE]
-    print('stock_price: ' + str(stock_price))
-    print('call_option: ' + str(call_option))
-    print('even price: ' + str(even_price))
-    print('win at: > ' + str(even_price))
-    print('max_loss: ' + str(loss_max))
-    print('max_win: ' + str(win_max))
-    print('execute_at: > ' + str(execute_at))
-    print('\n')
+        if option.last == '':
+            continue
+        # loss_at_stock_price = stock_price - call_option[TAG_PRICE]
+        loss_max = VAL_UNLIMIT
+        even_price = float(stock.price) - float(option.last)
+        execute_at = option.strike
+        win_max = float(option.last)
+        print('call_option: ' + str(option))
+        print('even price: ' + str(even_price))
+        print('win at: > ' + str(even_price))
+        print('max_loss: ' + str(loss_max))
+        print('max_win: ' + str(win_max))
+        print('execute_at: > ' + str(execute_at))
+        print('\n---------------------------------------------------------------------------')
 
 
 def short_call_spread():
@@ -79,8 +80,8 @@ def short_put_spread():
     print('\n')
 
 
-short_put_spread()
+# short_put_spread()
+#
+# short_call_spread()
 
-short_call_spread()
-
-short_call_w_asset()
+short_call_w_asset('CNC', '201906')
