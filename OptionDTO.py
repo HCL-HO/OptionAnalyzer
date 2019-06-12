@@ -1,6 +1,3 @@
-import json
-
-
 class Option:
     def __init__(self, vol, chg, last, bid, ask, strike):
         self.vol = vol
@@ -13,6 +10,12 @@ class Option:
     def __str__(self):
         return str({'vol': self.vol, 'chg': self.chg, 'last': self.last, 'bid': self.bid, 'ask': self.ask,
                     'strike': self.strike})
+
+    def get_price(self):
+        # if self.last == '' and self.ask != '0.010':
+        #     return self.ask
+        # else:
+            return self.last
 
     # def toJSON(self):
     #     return json.dumps(self, default=lambda o: o.__dict__,

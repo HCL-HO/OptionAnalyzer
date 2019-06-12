@@ -70,11 +70,11 @@ def get_options(table):
 
         strike = content_to_str(columns[6].contents)
 
-        put_vol = content_to_str(columns[8].contents)
-        put_chg = content_to_str(columns[9].contents)
+        put_vol = content_to_str(columns[12].contents)
+        put_chg = content_to_str(columns[11].contents)
         put_last = content_to_str(columns[10].span.contents)
-        put_bid = content_to_str(columns[11].contents)
-        put_ask = content_to_str(columns[12].contents)
+        put_bid = content_to_str(columns[8].contents)
+        put_ask = content_to_str(columns[9].contents)
 
         call = Option(call_vol, call_chg, call_last, call_bid, call_ask, strike)
         put = Option(put_vol, put_chg, put_last, put_bid, put_ask, strike)
@@ -127,4 +127,4 @@ def scrap(code, month):
     return result
 
 
-scrap('CNC', '201906')
+# scrap('CNC', '201906')
