@@ -22,10 +22,12 @@ def short_call_w_asset(code, month):
             continue
         # loss_at_stock_price = stock_price - call_option[TAG_PRICE]
         loss_max = VAL_UNLIMIT
-        even_price = float(stock.price) - float(option.get_price())
+        premium = (float(stock.price) - float(option.strike))
+        even_price = float(stock.price) - float(option.get_price()) + premium
         execute_at = option.strike
-        win_max = float(option.get_price())
+        win_max = float(option.get_price()) - (float(stock.price) - float(option.strike))
         print('call_option: ' + str(option))
+        print('premium: ' + str(premium))
         print('even price: ' + str(even_price))
         print('win at: > ' + str(even_price))
         print('max_loss: ' + str(loss_max))
@@ -303,6 +305,52 @@ def long_call_calendar_spread_print(call, call1, month, month1):
     print('\n')
 
 
+def short_straddle(code, month):
+    result = scrap(code, month)
+    calls = result['option']['call']
+    puts = result['option']['put']
+    for call in calls:
+        if call.get_price() != '':
+            for put in puts:
+                if put.get_price() != '' and call.strike == put.strike:
+                    premium = float(call.get_price()) + float(put.get_price())
+                    win_max = premium
+                    lower_limit = float(call.strike) - float(premium)
+                    upper_limit = float(call.strike) + float(premium)
+                    even_price = str(lower_limit) + ' to ' + str(upper_limit)
+                    loss_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
+                    print('short call : ' + str(call))
+                    print('short put: ' + str(put))
+                    print('premium: ' + str(premium))
+                    print('break even: ' + str(even_price))
+                    print('max_loss: ' + str(loss_max))
+                    print('max_win: ' + str(win_max))
+                    print('\n')
+
+
+def short_strangle(code, month):
+    result = scrap(code, month)
+    calls = result['option']['call']
+    puts = result['option']['put']
+    for call in calls:
+        if call.get_price() != '':
+            for put in puts:
+                if put.get_price() != '' and call.strike > put.strike:
+                    premium = float(call.get_price()) + float(put.get_price())
+                    win_max = premium
+                    lower_limit = float(put.strike) - float(premium)
+                    upper_limit = float(call.strike) + float(premium)
+                    even_price = str(lower_limit) + ' to ' + str(upper_limit)
+                    loss_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
+                    print('short call : ' + str(call))
+                    print('short put: ' + str(put))
+                    print('premium: ' + str(premium))
+                    print('break even: ' + str(even_price))
+                    print('max_loss: ' + str(loss_max))
+                    print('max_win: ' + str(win_max))
+                    print('\n')
+
+
 # volatile
 def short_call_calendar_spread(code, month):
     month1 = get_month(month, 1)
@@ -376,4 +424,7 @@ def short_put_calendar_spread_print(put, put1, month, month1):
 # long_call_calendar_spread('CNC', '201906')
 # short_call_calendar_spread('CNC', '201906')
 # long_put_calendar_spread('CNC', '201906')
-short_put_calendar_spread('CNC', '201906')
+# short_put_calendar_spread('CNC', '201906')
+# short_straddle('CNC', '201906')
+# short_strangle('CNC', '201906')
+short_call_w_asset('CNC', '201906')
