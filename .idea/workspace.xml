@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3821e1b5-4f14-437a-9ef1-ecb16a7664cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OptionDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/OptionDTO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/StockDTO.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrap.py" afterDir="false" />
     </list>
@@ -23,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyze.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="207" column="45" lean-forward="true" selection-start-line="207" selection-start-column="45" selection-end-line="207" selection-end-column="45" />
+            <state relative-caret-position="453">
+              <caret line="379" lean-forward="true" selection-start-line="379" selection-end-line="379" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -35,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2451">
-              <caret line="129" column="24" lean-forward="true" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+            <state>
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -88,8 +84,10 @@
       <find>content_to_str(</find>
       <find>start_pos</find>
       <find>columns</find>
-      <find>last</find>
       <find>print</find>
+      <find>url</find>
+      <find>last</find>
+      <find>open_site</find>
     </findStrings>
     <replaceStrings>
       <replace>put_</replace>
@@ -97,6 +95,8 @@
       <replace>content_to_str(</replace>
       <replace>get_price()</replace>
       <replace>content_to_str(columns</replace>
+      <replace>puts</replace>
+      <replace>put</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -107,15 +107,15 @@
       <list>
         <option value="$PROJECT_DIR$/StockDTO.py" />
         <option value="$PROJECT_DIR$/Util.py" />
-        <option value="$PROJECT_DIR$/scrap.py" />
         <option value="$PROJECT_DIR$/OptionDTO.py" />
+        <option value="$PROJECT_DIR$/scrap.py" />
         <option value="$PROJECT_DIR$/analyze.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
-    <option name="y" value="11" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-4" />
+    <option name="y" value="66" />
     <option name="width" value="1294" />
     <option name="height" value="973" />
   </component>
@@ -226,19 +226,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="11" width="1294" height="973" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49908924" visible="true" weight="0.25079617" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49908924" visible="true" weight="0.25039744" />
       <window_info id="Structure" order="1" sideWeight="0.50091076" side_tool="true" weight="0.25079617" />
       <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.25079617" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43809524" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21568628" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32967034" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2452381" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.52014655" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -246,6 +247,16 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
@@ -288,8 +299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2451">
-          <caret line="129" column="24" lean-forward="true" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+        <state>
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -298,8 +309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyze.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="207" column="45" lean-forward="true" selection-start-line="207" selection-start-column="45" selection-end-line="207" selection-end-column="45" />
+        <state relative-caret-position="453">
+          <caret line="379" lean-forward="true" selection-start-line="379" selection-end-line="379" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

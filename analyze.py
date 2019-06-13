@@ -226,8 +226,154 @@ def synthetic_short_stock(code, month):
                         print('\n')
 
 
+def get_month(month, param):
+    old_month = month[4:]
+    old_year = month[:4]
+    new_month = int(old_month) + param
+    new_year = int(old_year)
+    if new_month >= 13:
+        new_month = new_month - 12
+        new_year += 1
+    return str(new_year) + "{:02d}".format(new_month)
+
+
+# stagnant
+
+def long_put_calendar_spread(code, month):
+    month1 = get_month(month, 1)
+    month2 = get_month(month, 2)
+    result0 = scrap(code, month)
+    result1 = scrap(code, month1)
+    result2 = scrap(code, month2)
+    puts0 = result0['option']['put']
+    puts1 = result1['option']['put']
+    puts2 = result2['option']['put']
+    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
+    for put in puts0:
+        if put.get_price() != '':
+            for put1 in puts1:
+                if put1.get_price() != '' and put1.strike == put.strike:
+                    long_put_calendar_spread_print(put, put1, month, month1)
+            for put2 in puts2:
+                if put2.get_price() != '' and put2.strike == put.strike:
+                    long_put_calendar_spread_print(put, put2, month, month2)
+
+
+def long_put_calendar_spread_print(put, put1, month, month1):
+    premium = float(put1.get_price()) - float(put.get_price())
+    loss_max = 'Time decay (Short put) - time decay (Long put)'
+    win_max = premium
+    print('long put : ' + month + ': ' + str(put))
+    print('short put: ' + month1 + ': ' + str(put1))
+    print('premium: ' + str(premium))
+    print('max_loss: ' + str(loss_max))
+    print('max_win: ' + str(win_max))
+    print('\n')
+
+
+def long_call_calendar_spread(code, month):
+    month1 = get_month(month, 1)
+    month2 = get_month(month, 2)
+    result0 = scrap(code, month)
+    result1 = scrap(code, month1)
+    result2 = scrap(code, month2)
+    calls0 = result0['option']['call']
+    calls1 = result1['option']['call']
+    calls2 = result2['option']['call']
+    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
+    for call in calls0:
+        if call.get_price() != '':
+            for call1 in calls1:
+                if call1.get_price() != '' and call1.strike == call.strike:
+                    long_call_calendar_spread_print(call, call1, month, month1)
+            for call2 in calls2:
+                if call2.get_price() != '' and call2.strike == call.strike:
+                    long_call_calendar_spread_print(call, call2, month, month2)
+
+
+def long_call_calendar_spread_print(call, call1, month, month1):
+    premium = float(call1.get_price()) - float(call.get_price())
+    loss_max = premium
+    win_max = 'Time decay (Short call) - time decay (Long call)'
+    print('short call : ' + month + ': ' + str(call))
+    print('long call: ' + month1 + ': ' + str(call1))
+    print('premium: ' + str(premium))
+    print('max_loss: ' + str(loss_max))
+    print('max_win: ' + str(win_max))
+    print('\n')
+
+
+# volatile
+def short_call_calendar_spread(code, month):
+    month1 = get_month(month, 1)
+    month2 = get_month(month, 2)
+    result0 = scrap(code, month)
+    result1 = scrap(code, month1)
+    result2 = scrap(code, month2)
+    calls0 = result0['option']['call']
+    calls1 = result1['option']['call']
+    calls2 = result2['option']['call']
+    print('Stock price is further away from strike price on the nearby expiry date\n')
+    for call in calls0:
+        if call.get_price() != '':
+            for call1 in calls1:
+                if call1.get_price() != '' and call1.strike == call.strike:
+                    short_call_calendar_spread_print(call, call1, month, month1)
+            for call2 in calls2:
+                if call2.get_price() != '' and call2.strike == call.strike:
+                    short_call_calendar_spread_print(call, call2, month, month2)
+
+
+def short_call_calendar_spread_print(call, call1, month, month1):
+    premium = float(call1.get_price()) - float(call.get_price())
+    win_max = premium
+    loss_max = 'Time decay (Short call) - time decay (Long call)'
+    print('short call : ' + month + ': ' + str(call))
+    print('long call: ' + month1 + ': ' + str(call1))
+    print('premium: ' + str(premium))
+    print('max_loss: ' + str(loss_max))
+    print('max_win: ' + str(win_max))
+    print('\n')
+
+
+def short_put_calendar_spread(code, month):
+    month1 = get_month(month, 1)
+    month2 = get_month(month, 2)
+    result0 = scrap(code, month)
+    result1 = scrap(code, month1)
+    result2 = scrap(code, month2)
+    puts0 = result0['option']['put']
+    puts1 = result1['option']['put']
+    puts2 = result2['option']['put']
+    print('Maximum when the stock price is further away from strike price on the nearby expiry date\n')
+    for put in puts0:
+        if put.get_price() != '':
+            for put1 in puts1:
+                if put1.get_price() != '' and put1.strike == put.strike:
+                    long_put_calendar_spread_print(put, put1, month, month1)
+            for put2 in puts2:
+                if put2.get_price() != '' and put2.strike == put.strike:
+                    long_put_calendar_spread_print(put, put2, month, month2)
+
+
+def short_put_calendar_spread_print(put, put1, month, month1):
+    premium = float(put1.get_price()) - float(put.get_price())
+    win_max = premium
+    loss_max = 'Time decay (Short put) - time decay (Long put)'
+    print('long put : ' + month + ': ' + str(put))
+    print('short put: ' + month1 + ': ' + str(put1))
+    print('premium: ' + str(premium))
+    print('max_loss: ' + str(loss_max))
+    print('max_win: ' + str(win_max))
+    print('\n')
+
+
 # bear_put_spread('CNC', '201906')
 # bull_put_spread('CNC', '201906')
 # bull_call_spread('CNC', '201906')
 # synthetic_long_stock('CNC', '201906')
-synthetic_short_stock('CNC', '201906')
+# synthetic_short_stock('CNC', '201906')
+# long_call_calendar_spread('CNC', '201906')
+# short_call_calendar_spread('CNC', '201906')
+# long_put_calendar_spread('CNC', '201906')
+short_put_calendar_spread('CNC', '201906')

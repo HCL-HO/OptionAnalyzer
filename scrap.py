@@ -12,6 +12,9 @@ url = 'http://www.etnet.com.hk/www/eng/futures/futures_stockoptions.php?atscode=
 TAG_STOCK_CODE = '%STOCK_CODE'
 TAG_MONTH = '%MONTH'
 
+body_instance = ''
+site_instance = ''
+
 
 def print_class(o):
     print(json.dumps(o, indent=4, sort_keys=True, default=lambda x: x.__dict__))
@@ -25,11 +28,16 @@ def null_to_string(text):
 
 
 def open_site(site):
+    global body_instance, site_instance
+    if site_instance == site and body_instance != '':
+        return body_instance
     try:
         print(site)
         r = urllib.request.Request(site, headers={'User-Agent': 'Mozilla/5.0'})
         page = urlopen(r)
         soup = BeautifulSoup(page, features="html.parser")
+        body_instance = soup
+        site_instance = site
         # pyperclip.copy(str(soup))
         return soup
     except HTTPError as err:
@@ -125,6 +133,5 @@ def scrap(code, month):
     result['stock'] = stock_result
     # print_class(result)
     return result
-
 
 # scrap('CNC', '201906')
