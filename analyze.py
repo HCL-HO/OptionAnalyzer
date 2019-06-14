@@ -250,6 +250,11 @@ def long_put_calendar_spread(code, month):
     puts0 = result0['option']['put']
     puts1 = result1['option']['put']
     puts2 = result2['option']['put']
+    stock = result0['stock']
+    print('long_put_calendar_spread')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
     print('Maximum when the stock price is at strike price on the nearby expiry date\n')
     for put in puts0:
         if put.get_price() != '':
@@ -282,6 +287,11 @@ def long_call_calendar_spread(code, month):
     calls0 = result0['option']['call']
     calls1 = result1['option']['call']
     calls2 = result2['option']['call']
+
+    stock = result0['stock']
+    print('long_call_calendar_spread')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
     print('Maximum when the stock price is at strike price on the nearby expiry date\n')
     for call in calls0:
         if call.get_price() != '':
@@ -309,6 +319,12 @@ def short_straddle(code, month):
     result = scrap(code, month)
     calls = result['option']['call']
     puts = result['option']['put']
+
+    stock = result['stock']
+    print('short_straddle')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
     for call in calls:
         if call.get_price() != '':
             for put in puts:
@@ -332,6 +348,12 @@ def short_strangle(code, month):
     result = scrap(code, month)
     calls = result['option']['call']
     puts = result['option']['put']
+
+    stock = result['stock']
+    print('short_strangle')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
     for call in calls:
         if call.get_price() != '':
             for put in puts:
@@ -361,6 +383,12 @@ def short_call_calendar_spread(code, month):
     calls0 = result0['option']['call']
     calls1 = result1['option']['call']
     calls2 = result2['option']['call']
+
+    stock = result0['stock']
+    print('short_call_calendar_spread')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
     print('Stock price is further away from strike price on the nearby expiry date\n')
     for call in calls0:
         if call.get_price() != '':
@@ -393,6 +421,12 @@ def short_put_calendar_spread(code, month):
     puts0 = result0['option']['put']
     puts1 = result1['option']['put']
     puts2 = result2['option']['put']
+
+    stock = result0['stock']
+    print('short_put_calendar_spread')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
     print('Maximum when the stock price is further away from strike price on the nearby expiry date\n')
     for put in puts0:
         if put.get_price() != '':
@@ -416,6 +450,63 @@ def short_put_calendar_spread_print(put, put1, month, month1):
     print('\n')
 
 
+def long_straddle(code, month):
+    result = scrap(code, month)
+    puts = result['option']['put']
+    calls = result['option']['call']
+
+    stock = result['stock']
+    print('long_straddle')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
+    for call in calls:
+        if call.get_price() != '':
+            for put in puts:
+                if put.get_price() != '' and call.strike == put.strike:
+                    premium = float(call.get_price()) + float(put.get_price())
+                    lower_limit = float(call.strike) - float(premium)
+                    upper_limit = float(call.strike) + float(premium)
+                    even_price = str(lower_limit) + ' to ' + str(upper_limit)
+                    win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
+                    loss_max = premium
+                    print('short call : ' + str(call))
+                    print('short put: ' + str(put))
+                    print('premium: ' + str(premium))
+                    print('break even: ' + str(even_price))
+                    print('max_loss: ' + str(loss_max))
+                    print('max_win: ' + str(win_max))
+                    print('\n')
+
+
+def long_strangle(code, month):
+    result = scrap(code, month)
+    calls = result['option']['call']
+    puts = result['option']['put']
+
+    stock = result['stock']
+    print('long_strangle')
+    print('stock_price: ' + str(stock.price))
+    print('\n---------------------------------------------------------------------------')
+
+    for call in calls:
+        if call.get_price() != '':
+            for put in puts:
+                if put.get_price() != '' and call.strike > put.strike:
+                    premium = float(call.get_price()) + float(put.get_price())
+                    lower_limit = float(put.strike) - float(premium)
+                    upper_limit = float(call.strike) + float(premium)
+                    even_price = str(lower_limit) + ' to ' + str(upper_limit)
+                    win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
+                    loss_max = premium
+                    print('short call : ' + str(call))
+                    print('short put: ' + str(put))
+                    print('premium: ' + str(premium))
+                    print('break even: ' + str(even_price))
+                    print('max_loss: ' + str(loss_max))
+                    print('max_win: ' + str(win_max))
+                    print('\n')
+
 # bear_put_spread('CNC', '201906')
 # bull_put_spread('CNC', '201906')
 # bull_call_spread('CNC', '201906')
@@ -427,4 +518,6 @@ def short_put_calendar_spread_print(put, put1, month, month1):
 # short_put_calendar_spread('CNC', '201906')
 # short_straddle('CNC', '201906')
 # short_strangle('CNC', '201906')
-short_call_w_asset('CNC', '201906')
+# short_call_w_asset('CNC', '201906')
+# long_straddle('CNC', '201906')
+# long_strangle('CNC', '201906')
