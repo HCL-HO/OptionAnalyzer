@@ -41,6 +41,7 @@ def bear_call_spread(code, month):
     call_options = result['option']['call']
     stock = result['stock']
     print('stock_price: ' + str(stock.price))
+    print('bear_call_spread')
     print('\n---------------------------------------------------------------------------')
     option_index = []
     for num in range(len(call_options)):
@@ -53,12 +54,14 @@ def bear_call_spread(code, month):
         for num2 in option_index:
             if num2 > num:
                 option2 = call_options[num2]
-                loss_max = float(option2.strike) - float(option1.strike) - float(option2.get_price())
-                even_price = float(option1.strike) + float(option1.get_price()) - float(option2.get_price())
+                premium = float(option1.get_price()) - float(option2.get_price())
+                loss_max = float(option2.strike) - float(option1.strike) - premium
+                even_price = float(option1.strike) + premium
                 # execute_at = call_option[TAG_STRIKEPRICE]
-                win_max = float(option1.get_price()) - float(option2.get_price())
+                win_max = premium
                 print('short call_option: ' + str(option1))
                 print('long call_option: ' + str(option2))
+                print('premium: ' + str(premium))
                 print('even price: ' + str(even_price))
                 print('win at: < ' + str(even_price))
                 print('max_loss: ' + str(loss_max))
@@ -145,6 +148,7 @@ def bear_put_spread(code, month):
     result = scrap(code, month)
     put_options = result['option']['put']
     stock = result['stock']
+    print('bear_put_spread')
     print('stock_price: ' + str(stock.price))
     print('\n---------------------------------------------------------------------------')
     option_index = []
@@ -157,14 +161,16 @@ def bear_put_spread(code, month):
         for num2 in option_index:
             if num2 > num:
                 option2 = put_options[num2]
-                loss_max = float(option2.get_price()) - float(option1.get_price())
-                even_price = float(option2.strike) - float(option2.get_price()) + float(option1.get_price())
+                premium = float(option2.get_price()) - float(option1.get_price())
+                loss_max = premium
+                even_price = float(option2.strike) - premium
                 # execute_at = call_option[TAG_STRIKEPRICE]
-                win_max = float(option2.strike) - float(option1.strike) - float(option2.get_price()) + float(
-                    option1.get_price())
+                win_max = float(option2.strike) - float(option1.strike) - premium
                 print('short put_option: ' + str(option1))
                 print('long put_option: ' + str(option2))
+                print('premium: ' + str(premium))
                 print('even price: ' + str(even_price))
+                print('stock from even: ' + str(float(stock.price) - even_price))
                 print('win at: < ' + str(even_price))
                 print('max_loss: ' + str(loss_max))
                 print('max_win: ' + str(win_max))
@@ -404,8 +410,8 @@ def short_call_calendar_spread_print(call, call1, month, month1):
     premium = float(call1.get_price()) - float(call.get_price())
     win_max = premium
     loss_max = 'Time decay (Short call) - time decay (Long call)'
-    print('short call : ' + month + ': ' + str(call))
-    print('long call: ' + month1 + ': ' + str(call1))
+    print('long call : ' + month + ': ' + str(call))
+    print('short call: ' + month1 + ': ' + str(call1))
     print('premium: ' + str(premium))
     print('max_loss: ' + str(loss_max))
     print('max_win: ' + str(win_max))

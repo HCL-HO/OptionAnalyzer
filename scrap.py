@@ -1,19 +1,16 @@
-import urllib
-import pyperclip
 import json
 from OptionDTO import *
 from StockDTO import *
-from urllib.error import HTTPError
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
+from Util import open_site
 
 url = 'http://www.etnet.com.hk/www/eng/futures/futures_stockoptions.php?atscode=%STOCK_CODE&month=%MONTH'
 
 TAG_STOCK_CODE = '%STOCK_CODE'
 TAG_MONTH = '%MONTH'
 
-body_instance = ''
-site_instance = ''
+
+# body_instance = ''
+# site_instance = ''
 
 
 def print_class(o):
@@ -25,25 +22,6 @@ def null_to_string(text):
         return ''
     else:
         return str(text)
-
-
-def open_site(site):
-    global body_instance, site_instance
-    if site_instance == site and body_instance != '':
-        return body_instance
-    try:
-        print(site)
-        r = urllib.request.Request(site, headers={'User-Agent': 'Mozilla/5.0'})
-        page = urlopen(r)
-        soup = BeautifulSoup(page, features="html.parser")
-        body_instance = soup
-        site_instance = site
-        # pyperclip.copy(str(soup))
-        return soup
-    except HTTPError as err:
-        print(err.msg)
-        print(err.code)
-        return None
 
 
 def content_to_str(contents):
