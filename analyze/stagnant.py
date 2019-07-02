@@ -1,5 +1,4 @@
 from analyze import *
-import sys
 
 
 def stagnant(code, month):
