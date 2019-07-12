@@ -18,5 +18,6 @@ class Dividend:
         print_class(self)
 
     def pretty_print(self):
-        print(self.annouce_date + ' ' + self.number + ' ' + self.name + ' ' + self.financial_year + ' '
-              + self.detail + ' ' + self.ex_date + ' ' + self.book_close + ' ' + self.payable)
+        print('Announcement Date	Code	Name	Financial Year	Particular	Ex-date	Book Closed Date	Payable Date')
+        print(self.annouce_date + '  ' + self.number + '  ' + self.name + '  ' + self.financial_year + '  '
+              + self.detail + '  ' + self.ex_date + '  ' + self.book_close + '  ' + self.payable + '\n')

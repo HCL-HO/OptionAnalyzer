@@ -26,3 +26,6 @@ def scrap() -> Index:
 
 def show_hsi():
     scrap().print()
+
+
+show_hsi()

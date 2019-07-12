@@ -1,12 +1,13 @@
 from bearish import bearish
 from bullish import bullish
 from index_scrap import show_hsi
+from stagnant import stagnant
 from volatile import volatile
 from show_options import show_options
 
 # code = 'CLK'
-code = 'TCH'
-# code = 'MTR'
+# code = 'TCH'
+code = 'MTR'
 # code = 'CNC'
 month = '201907'
 # month = '201907'bear_put_spread

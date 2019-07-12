@@ -3,7 +3,7 @@ from typing import List
 from Util import open_site, print_class
 from DividendDTO import Dividend
 
-url = 'http://www.etnet.com.hk/www/eng/stocks/ci_div_exdate.php?page='
+url = 'http://www.etnet.com.hk/www/tc/stocks/ci_div_exdate.php?page='
 
 
 def row_to_dividend(row):
@@ -38,6 +38,7 @@ def scrap():
                     try:
                         dividend = row_to_dividend(row)
                         if dividend is not None:
+                            dividend.pretty_print()
                             dividends.append(dividend)
                     except IndexError as e:
                         print(e)
@@ -45,9 +46,9 @@ def scrap():
             page += 1
         else:
             has_data = False
-    print_class(dividends)
     return dividends
 
 
 # page += 1
 
+scrap()
