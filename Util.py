@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 def print_class(o):
-    print(json.dumps(o, indent=4, sort_keys=True, default=lambda x: x.__dict__))
+    print(json.dumps(o, indent=4, sort_keys=False, default=lambda x: x.__dict__))
 
 
 def open_site_custom(site, cookie=None, header=None):

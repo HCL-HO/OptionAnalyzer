@@ -1,5 +1,5 @@
-from common import *
-from StockDTO import Stock
+import util.common as Common
+import model.StockDTO as Stock
 from Util import open_site_custom, print_class
 
 url = 'http://www.etnet.com.hk/www/tc/stocks/realtime/quote.php?code=$CODE'
@@ -26,16 +26,17 @@ def get_stock(code):
     row2_tds = row2.find_all('td')
     low = row2_tds[1].find_all('span')[1].text
     m_low = row2_tds[4].find('span').text
-    stock = Stock(price, high, low, turnover, change, m_high, m_low)
+    stock = Stock.Stock(price, high, low, turnover, change, m_high, m_low)
     return stock
 
 
 def show_favorite():
-    codes = load_array_from_file('favorites.txt', '\n')
+    codes = Common.load_array_from_file('C:\\workspace\\programs\\OptionAnalyzer\\favorites.txt', '\n')
     result = {}
     for code in codes:
         result[code] = get_stock(code)
     print_class(result)
 
-show_favorite()
+
+# show_favorite()
 # print(low)

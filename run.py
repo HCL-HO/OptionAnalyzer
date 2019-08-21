@@ -7,14 +7,16 @@ from show_options import show_options
 
 # code = 'CLK'
 # code = 'TCH'
-code = 'MTR'
+# code = 'HKB'
+# code = 'MTR'
 # code = 'CNC'
-month = '201907'
+code = 'CNC'
+month = '201908'
 # month = '201907'bear_put_spread
 
-volatile(code, month)
+# volatile(code, month)
 # show_options(code, month)
 # show_hsi()
 # bearish(code, month)
-# stagnant(code, month)
+stagnant(code, month)
 # bullish(code, month)

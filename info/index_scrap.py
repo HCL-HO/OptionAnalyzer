@@ -1,11 +1,11 @@
-from Util import open_site
-from IndexDTO import Index
+import Util as SITE
+import model.IndexDTO as IndexDTO
 
 url = 'http://www.etnet.com.hk/www/tc/stocks/indexes_detail.php?subtype=hsi'
 
 
-def scrap() -> Index:
-    body = open_site(url)
+def scrap() -> IndexDTO.Index:
+    body = SITE.open_site(url)
     container = body.find('div', {"class": "StkIndexesLeft"})
     details_div = container.find('div', {'class': "StkIndexesOther"})
     details_left = details_div.findAll('div')[0]
@@ -19,7 +19,7 @@ def scrap() -> Index:
     this_low = details_right.findAll('p')[1].text.rstrip()[-9:]
     turnover = container.findAll('div', {'class': "StkIndexesChange"})[1].findAll('div')[1].text
 
-    index = Index(index, this_high, this_low, turnover, change, this_open, last_close)
+    index = IndexDTO.Index(index, this_high, this_low, turnover, change, this_open, last_close)
     return index
     # hsi = Stock()
 
@@ -27,5 +27,3 @@ def scrap() -> Index:
 def show_hsi():
     scrap().print()
 
-
-show_hsi()

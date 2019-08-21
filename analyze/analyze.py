@@ -23,7 +23,7 @@ def short_call_w_asset(code, month):
         # loss_at_stock_price = stock_price - call_option[TAG_PRICE]
         loss_max = VAL_UNLIMIT
         premium = (float(stock.price) - float(option.strike))
-        even_price = float(stock.price) - float(option.get_price()) + premium
+        even_price = float(stock.price) - float(option.get_price())
         execute_at = option.strike
         win_max = float(option.get_price()) - (float(stock.price) - float(option.strike))
         print('call_option: ' + str(option))
@@ -505,8 +505,8 @@ def long_strangle(code, month):
                     even_price = str(lower_limit) + ' to ' + str(upper_limit)
                     win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
                     loss_max = premium
-                    print('short call : ' + str(call))
-                    print('short put: ' + str(put))
+                    print('long call : ' + str(call))
+                    print('long put: ' + str(put))
                     print('premium: ' + str(premium))
                     print('break even: ' + str(even_price))
                     print('max_loss: ' + str(loss_max))
