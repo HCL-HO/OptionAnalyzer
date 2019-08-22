@@ -1,18 +1,22 @@
 import util.common as Common
 import model.StockDTO as Stock
-from Util import open_site_custom, print_class
+import Util
+import argparse
+
+# from Util import open_site_custom, print_class
 
 url = 'http://www.etnet.com.hk/www/tc/stocks/realtime/quote.php?code=$CODE'
 referer = 'http://www.etnet.com.hk/www/tc/stocks/realtime/'
 CODE_REPLACE = '$CODE'
+fav_file = 'C:\\workspace\\programs\\OptionAnalyzer\\favorites.txt'
 
 
 def get_stock(code):
     if code == '':
         return None
     m_url = url.replace(CODE_REPLACE, code)
-    body = open_site_custom(m_url, header={'User-Agent': 'Mozilla/5.0',
-                                           'Referer': referer})
+    body = Util.open_site_custom(m_url, header={'User-Agent': 'Mozilla/5.0',
+                                                'Referer': referer})
     container = body.find(id='StkDetailMainBox')
     trs = container.find_all('tr')
     row1 = trs[0]
@@ -30,13 +34,71 @@ def get_stock(code):
     return stock
 
 
+def intercept_input(input) -> bool:
+    if input.lower().startswith('a '):
+        codes = Common.load_array_from_file(fav_file, '\n')
+        value = input[2:]
+        codes.append(value)
+        Common.write_output_to_file('\n'.join(str(x) for x in codes), fav_file)
+        return True
+    elif input.lower().startswith('d '):
+        codes = Common.load_array_from_file(fav_file, '\n')
+        value = input[2:]
+        codes.remove(value)
+        Common.write_output_to_file('\n'.join(str(x) for x in codes), fav_file)
+        return True
+    else:
+        return False
+
+
+def listen_to_selection(result: dict):
+    print('Select stock: ')
+    print('D stock to delete ')
+    print('A stock to add ')
+    # print('Enter X to quit: ')
+    selected_stock = input()
+    if not selected_stock:
+        print('Exit')
+        return
+    if intercept_input(selected_stock):
+        show_favorite()
+        return
+    stock = result.get(selected_stock)
+    if not stock:
+        print('Try again')
+        listen_to_selection(result)
+    else:
+        Util.print_class(stock)
+        print('Enter X to quit: ')
+        print('Press Enter to back: ')
+        command = input()
+        if command.lower() == 'x':
+            print('Exit')
+        else:
+            print_stocks(result)
+
+
+def print_stocks(result):
+    indent = '          '
+    for code, stock in result.items():
+        print('====================================================================================================')
+        print(code)
+        print('====================================================================================================')
+        print(indent + stock.price)
+        print(indent + stock.chg)
+    listen_to_selection(result)
+
+
 def show_favorite():
-    codes = Common.load_array_from_file('C:\\workspace\\programs\\OptionAnalyzer\\favorites.txt', '\n')
+    codes = Common.load_array_from_file(fav_file, '\n')
     result = {}
     for code in codes:
-        result[code] = get_stock(code)
-    print_class(result)
+        stock = get_stock(code)
+        result[code] = stock
+    print_stocks(result)
+    #     result[code] = get_stock(code)
+    # print_class(result)
 
 
-# show_favorite()
+show_favorite()
 # print(low)

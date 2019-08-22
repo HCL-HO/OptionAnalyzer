@@ -27,3 +27,5 @@ def scrap() -> IndexDTO.Index:
 def show_hsi():
     scrap().print()
 
+
+show_hsi()

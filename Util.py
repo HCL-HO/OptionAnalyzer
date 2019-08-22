@@ -14,7 +14,7 @@ def open_site_custom(site, cookie=None, header=None):
     # if site_instance == site and body_instance != '':
     #     return body_instance
     try:
-        print(site)
+        # print(site)
         opener = urllib.request.build_opener()
         if cookie is not None:
             opener.addheaders.append(('Cookie', cookie))
