@@ -47,19 +47,22 @@ def intercept_input(input) -> bool:
         codes.remove(value)
         Common.write_output_to_file('\n'.join(str(x) for x in codes), fav_file)
         return True
+    elif input.lower().startswith('r'):
+        return True
     else:
         return False
 
 
 def listen_to_selection(result: dict):
     print('Select stock: ')
-    print('D stock to delete ')
-    print('A stock to add ')
+    print('D to delete ')
+    print('A to add ')
+    print('R to refresh ')
     # print('Enter X to quit: ')
     selected_stock = input()
     if not selected_stock:
         print('Exit')
-        return
+        exit()
     if intercept_input(selected_stock):
         show_favorite()
         return
@@ -74,6 +77,7 @@ def listen_to_selection(result: dict):
         command = input()
         if command.lower() == 'x':
             print('Exit')
+            exit()
         else:
             print_stocks(result)
 
