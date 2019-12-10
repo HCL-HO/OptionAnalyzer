@@ -1,5 +1,8 @@
+from typing import List
+
 from scrap import scrap
 from Util import *
+from OptionDTO import *
 
 config = {
     'info': True
@@ -7,8 +10,22 @@ config = {
 
 TAG_STRIKEPRICE = 'strike_price'
 TAG_PRICE = 'price'
-
 VAL_UNLIMIT = 'unlimited'
+
+
+def print_result(options: List[Option], premium: str, even_price: str, win_at: str, max_loss: str, max_win: str,
+                 max_loss_to_max_win: str):
+    for option in options:
+        print(option.position.value + ' ' + option.m_type.value)
+        print(option)
+    print('premium: ' + str(premium))
+    print('even price: ' + str(even_price))
+    print('win at: ' + str(win_at))
+    print('max_loss: ' + str(max_loss))
+    print('max_win: ' + str(max_win))
+    print('max_loss_to_max_win: ' + max_loss_to_max_win)
+    print('\n---------------------------------------------------------------------------')
+    print('\n')
 
 
 def short_call_w_asset(code, month):
@@ -26,14 +43,8 @@ def short_call_w_asset(code, month):
         even_price = float(stock.price) - float(option.get_price())
         execute_at = option.strike
         win_max = float(option.get_price()) - (float(stock.price) - float(option.strike))
-        print('call_option: ' + str(option))
-        print('premium: ' + str(premium))
-        print('even price: ' + str(even_price))
-        print('win at: > ' + str(even_price))
-        print('max_loss: ' + str(loss_max))
-        print('max_win: ' + str(win_max))
         print('execute_at: > ' + str(execute_at))
-        print('\n---------------------------------------------------------------------------')
+        print_result(option, str(premium), str(even_price), str(even_price), loss_max, str(win_max), VAL_UNLIMIT)
 
 
 def bear_call_spread(code, month):
@@ -51,27 +62,19 @@ def bear_call_spread(code, month):
 
     for num in option_index:
         option1 = call_options[num]
+        option1.position = OptionPosition.SHORT
         for num2 in option_index:
             if num2 > num:
                 option2 = call_options[num2]
+                option2.position = OptionPosition.LONG
                 premium = float(option1.get_price()) - float(option2.get_price())
                 loss_max = float(option2.strike) - float(option1.strike) - premium
                 even_price = float(option1.strike) + premium
                 # execute_at = call_option[TAG_STRIKEPRICE]
                 win_max = premium
-                print('short call_option: ' + str(option1))
-                print('long call_option: ' + str(option2))
-                print('premium: ' + str(premium))
-                print('even price: ' + str(even_price))
-                print('win at: < ' + str(even_price))
-                print('max_loss: ' + str(loss_max))
-                print('max_win: ' + str(win_max))
-                try:
-                    print('max_loss_to_max_win: ' + str(loss_max / win_max))
-                except ZeroDivisionError:
-                    print('no chance to win')
-                # print('execute_at: > ' + str(execute_at))
-                print('\n')
+                options = [option1, option2]
+                print_result(options, str(premium), str(even_price), str(-even_price), str(loss_max), str(win_max),
+                             str(loss_max / win_max))
 
 
 def bull_call_spread(code, month):
@@ -88,27 +91,19 @@ def bull_call_spread(code, month):
 
     for num in option_index:
         option1 = call_options[num]
+        option1.position = OptionPosition.LONG
         for num2 in option_index:
             if num2 > num:
                 option2 = call_options[num2]
+                option2.position = OptionPosition.SHORT
                 premium = float(option1.get_price()) - float(option2.get_price())
                 loss_max = premium
                 even_price = float(option1.strike) + float(option1.get_price()) - float(option2.get_price())
                 # execute_at = call_option[TAG_STRIKEPRICE]
                 win_max = float(option2.strike) - float(option1.strike) - premium
-                print('short call_option: ' + str(option2))
-                print('long call_option: ' + str(option1))
-                print('even price: ' + str(even_price))
-                print('win at: > ' + str(even_price))
-                print('premium: ' + str(premium))
-                print('max_loss: ' + str(loss_max))
-                print('max_win: ' + str(win_max))
-                try:
-                    print('max_loss_to_max_win: ' + str(loss_max / win_max))
-                except ZeroDivisionError:
-                    print('no chance to win')
-                # print('execute_at: > ' + str(execute_at))
-                print('\n')
+                options = [option1, option2]
+                print_result(options, str(premium), str(even_price), str(even_price), str(loss_max), str(win_max),
+                             str(loss_max / win_max))
 
 
 def bull_put_spread(code, month):
@@ -124,24 +119,18 @@ def bull_put_spread(code, month):
         option_index.append(num)
     for num in option_index:
         option1 = put_options[num]
+        option1.position = OptionPosition.LONG
         for num2 in option_index:
             if num2 > num:
                 option2 = put_options[num2]
+                option2.position = OptionPosition.SHORT
                 loss_max = float(option2.strike) - float(option1.strike) - float(option1.get_price())
                 even_price = float(option2.strike) - float(option2.get_price()) + float(option1.get_price())
                 # execute_at = call_option[TAG_STRIKEPRICE]
                 win_max = float(option2.get_price()) - float(option1.get_price())
-                print('short put_option: ' + str(option2))
-                print('long put_option: ' + str(option1))
-                print('even price: ' + str(even_price))
-                print('win at: > ' + str(even_price))
-                print('max_loss: ' + str(loss_max))
-                print('max_win: ' + str(win_max))
-                try:
-                    print('max_loss_to_max_win: ' + str(loss_max / win_max))
-                except ZeroDivisionError:
-                    print('no chance to win')
-                print('\n')
+                options = [option1, option2]
+                print_result(options, str('N/A'), str(even_price), str(even_price), str(loss_max), str(win_max),
+                             str(loss_max / win_max))
 
 
 def bear_put_spread(code, month):
@@ -158,27 +147,19 @@ def bear_put_spread(code, month):
         option_index.append(num)
     for num in option_index:
         option1 = put_options[num]
+        option1.position = OptionPosition.SHORT
         for num2 in option_index:
             if num2 > num:
                 option2 = put_options[num2]
+                option2.position = OptionPosition.LONG
                 premium = float(option2.get_price()) - float(option1.get_price())
                 loss_max = premium
                 even_price = float(option2.strike) - premium
+                options = [option1, option2]
                 # execute_at = call_option[TAG_STRIKEPRICE]
                 win_max = float(option2.strike) - float(option1.strike) - premium
-                print('short put_option: ' + str(option1))
-                print('long put_option: ' + str(option2))
-                print('premium: ' + str(premium))
-                print('even price: ' + str(even_price))
-                print('stock from even: ' + str(float(stock.price) - even_price))
-                print('win at: < ' + str(even_price))
-                print('max_loss: ' + str(loss_max))
-                print('max_win: ' + str(win_max))
-                try:
-                    print('max_loss_to_max_win: ' + str(loss_max / win_max))
-                except ZeroDivisionError:
-                    print('no chance to win')
-                print('\n')
+                print_result(options, str(premium), str(even_price), str(-even_price), str(loss_max), str(win_max),
+                             str(loss_max / win_max))
 
 
 def synthetic_long_stock(code, month):
@@ -197,14 +178,12 @@ def synthetic_long_stock(code, month):
                         even_price = float(call.strike) + float(premium)
                         loss_max = 'any below ' + str(even_price)
                         win_max = 'any above ' + str(even_price)
-                        print('long call: ' + str(call))
-                        print('short put: ' + str(put))
-                        print('premium: ' + str(premium))
-                        print('even price: ' + str(even_price))
-                        print('win at: > ' + str(even_price))
-                        print('max_loss: ' + str(loss_max))
-                        print('max_win: ' + str(win_max))
-                        print('\n')
+                        call.position = OptionPosition.LONG
+                        put.position = OptionPosition.SHORT
+                        options = [call, put]
+                        print_result(options, str(premium), str(even_price), str(even_price), str(loss_max),
+                                     str(win_max),
+                                     str('N/A'))
 
 
 def synthetic_short_stock(code, month):
@@ -224,14 +203,12 @@ def synthetic_short_stock(code, month):
                         even_price = float(put.strike) - float(premium)
                         loss_max = 'any above ' + str(even_price)
                         win_max = 'any below ' + str(even_price)
-                        print('short call: ' + str(call))
-                        print('long put: ' + str(put))
-                        print('premium: ' + str(premium))
-                        print('even price: ' + str(even_price))
-                        print('win at: < ' + str(even_price))
-                        print('max_loss: ' + str(loss_max))
-                        print('max_win: ' + str(win_max))
-                        print('\n')
+                        call.position = OptionPosition.SHORT
+                        put.position = OptionPosition.LONG
+                        options = [call, put]
+                        print_result(options, str(premium), str(even_price), str(-even_price), str(loss_max),
+                                     str(win_max),
+                                     str('N/A'))
 
 
 def get_month(month, param):
@@ -259,9 +236,8 @@ def long_put_calendar_spread(code, month):
     stock = result0['stock']
     print('long_put_calendar_spread')
     print('stock_price: ' + str(stock.price))
-    print('\n---------------------------------------------------------------------------')
-
-    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
+    # print('\n---------------------------------------------------------------------------')
+    #
     for put in puts0:
         if put.get_price() != '':
             for put1 in puts1:
@@ -273,6 +249,7 @@ def long_put_calendar_spread(code, month):
 
 
 def long_put_calendar_spread_print(put, put1, month, month1):
+    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
     premium = float(put1.get_price()) - float(put.get_price())
     loss_max = 'Time decay (Short put) - time decay (Long put)'
     win_max = premium
@@ -298,7 +275,6 @@ def long_call_calendar_spread(code, month):
     print('long_call_calendar_spread')
     print('stock_price: ' + str(stock.price))
     print('\n---------------------------------------------------------------------------')
-    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
     for call in calls0:
         if call.get_price() != '':
             for call1 in calls1:
@@ -310,6 +286,7 @@ def long_call_calendar_spread(code, month):
 
 
 def long_call_calendar_spread_print(call, call1, month, month1):
+    print('Maximum when the stock price is at strike price on the nearby expiry date\n')
     premium = float(call1.get_price()) - float(call.get_price())
     loss_max = premium
     win_max = 'Time decay (Short call) - time decay (Long call)'
@@ -476,13 +453,19 @@ def long_straddle(code, month):
                     even_price = str(lower_limit) + ' to ' + str(upper_limit)
                     win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
                     loss_max = premium
-                    print('short call : ' + str(call))
-                    print('short put: ' + str(put))
-                    print('premium: ' + str(premium))
-                    print('break even: ' + str(even_price))
-                    print('max_loss: ' + str(loss_max))
-                    print('max_win: ' + str(win_max))
-                    print('\n')
+                    # print('long call : ' + str(call))
+                    # print('long put: ' + str(put))
+                    # print('premium: ' + str(premium))
+                    # print('break even: ' + str(even_price))
+                    # print('max_loss: ' + str(loss_max))
+                    # print('max_win: ' + str(win_max))
+                    # print('\n')
+                    call.position = OptionPosition.LONG
+                    put.position = OptionPosition.LONG
+                    options = [call, put]
+                    print_result(options, str(premium), str(even_price), str(even_price), str(loss_max),
+                                 str(win_max),
+                                 str('N/A'))
 
 
 def long_strangle(code, month):
@@ -505,25 +488,24 @@ def long_strangle(code, month):
                     even_price = str(lower_limit) + ' to ' + str(upper_limit)
                     win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
                     loss_max = premium
-                    print('long call : ' + str(call))
-                    print('long put: ' + str(put))
-                    print('premium: ' + str(premium))
-                    print('break even: ' + str(even_price))
-                    print('max_loss: ' + str(loss_max))
-                    print('max_win: ' + str(win_max))
-                    print('\n')
+                    call.position = OptionPosition.LONG
+                    put.position = OptionPosition.LONG
+                    options = [call, put]
+                    print_result(options, str(premium), str(even_price), str(even_price), str(loss_max),
+                                 str(win_max),
+                                 str('N/A'))
 
-# bear_put_spread('CNC', '201906')
-# bull_put_spread('CNC', '201906')
-# bull_call_spread('CNC', '201906')
-# synthetic_long_stock('CNC', '201906')
-# synthetic_short_stock('CNC', '201906')
-# long_call_calendar_spread('CNC', '201906')
-# short_call_calendar_spread('CNC', '201906')
-# long_put_calendar_spread('CNC', '201906')
-# short_put_calendar_spread('CNC', '201906')
-# short_straddle('CNC', '201906')
-# short_strangle('CNC', '201906')
-# short_call_w_asset('CNC', '201906')
-# long_straddle('CNC', '201906')
-# long_strangle('CNC', '201906')
+    # bear_put_spread('CNC', '201906')
+    # bull_put_spread('CNC', '201906')
+    # bull_call_spread('CNC', '201906')
+    # synthetic_long_stock('CNC', '201906')
+    # synthetic_short_stock('CNC', '201906')
+    # long_call_calendar_spread('CNC', '201906')
+    # short_call_calendar_spread('CNC', '201906')
+    # long_put_calendar_spread('CNC', '201906')
+    # short_put_calendar_spread('CNC', '201906')
+    # short_straddle('CNC', '201906')
+    # short_strangle('CNC', '201906')
+    # short_call_w_asset('CNC', '201906')
+    # long_straddle('CNC', '201906')
+    # long_strangle('CNC', '201906')

@@ -62,8 +62,9 @@ def get_options(table):
         put_bid = content_to_str(columns[8].contents)
         put_ask = content_to_str(columns[9].contents)
 
-        call = Option(call_vol, call_chg, call_last, call_bid, call_ask, strike)
-        put = Option(put_vol, put_chg, put_last, put_bid, put_ask, strike)
+        call = Option(call_vol, call_chg, call_last, call_bid, call_ask, strike, OptionType.CALL,
+                      OptionPosition.UNDEFINED)
+        put = Option(put_vol, put_chg, put_last, put_bid, put_ask, strike, OptionType.PUT, OptionPosition.UNDEFINED)
         options['call'].append(call)
         options['put'].append(put)
         # print(call)
