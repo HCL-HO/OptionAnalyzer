@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3821e1b5-4f14-437a-9ef1-ecb16a7664cf" name="Default Changelist" comment="dividend">
-      <change afterPath="$PROJECT_DIR$/info/favorites.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/my_favorite_scrap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analyze/Strategy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/info/holding_record.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logbook/CRUD.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logbook/StockHoldDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logbook/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logbook/options.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logbook/stock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/stock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/OptionCalculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OptionCalculator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info/divident_scrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/info/divident_scrap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/bearish.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/bearish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/bullish.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/bullish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/stagnant.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/stagnant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyze/volatile.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyze/volatile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info/index_scrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/info/index_scrap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/DividendDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/DividendDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info/my_favorite_scrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/info/my_favorite_scrap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schtask.py" beforeDir="false" afterPath="$PROJECT_DIR$/schtask.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrap.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,43 +36,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/common.py">
+        <entry file="file://$PROJECT_DIR$/info/holding_record.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="448">
-              <caret line="28" selection-end-line="28" />
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/info/my_favorite_scrap.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/favorites.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/StockDTO.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -69,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="21" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -79,43 +60,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/DividendDTO.py">
+        <entry file="file://$PROJECT_DIR$/analyze/bullish.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info/index_scrap.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+            <state relative-caret-position="-38">
+              <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
+        <entry file="file://$PROJECT_DIR$/analyze/Strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            <state relative-caret-position="785">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/urllib/request.py">
+        <entry file="file://$PROJECT_DIR$/analyze/volatile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5700">
-              <caret line="324" column="8" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
+            <state relative-caret-position="285">
+              <caret line="103" selection-start-line="103" selection-end-line="105" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyze/analyze.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="347" column="77" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/analyze/stagnant.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2090">
+              <caret line="116" column="38" lean-forward="true" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyze/bearish.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -131,25 +136,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>figureTable</find>
-      <find>=&quot;content</find>
-      <find>call_</find>
-      <find>traverse_table</find>
-      <find>DivFigureContent</find>
-      <find>HeaderTxt</find>
-      <find>contents</find>
-      <find>content_to_str(</find>
-      <find>start_pos</find>
-      <find>columns</find>
-      <find>print</find>
-      <find>url</find>
       <find>last</find>
       <find>call</find>
       <find>strad</find>
-      <find>open_site</find>
       <find>strangle</find>
       <find>bear_</find>
-      <find>bear_call_spread</find>
       <find>'201906'</find>
       <find>long_put_calendar_spread</find>
       <find>Time decay</find>
@@ -159,6 +150,22 @@
       <find>StkIndexesChange</find>
       <find>' '</find>
       <find>Price unchange</find>
+      <find>long_strangle</find>
+      <find>open_site</find>
+      <find>from common import *</find>
+      <find>from StockDTO import Stock</find>
+      <find>date</find>
+      <find>low</find>
+      <find>'C:\\workspace\\programs\\OptionAnalyzer\\favorites.txt'</find>
+      <find>bear_call_spread</find>
+      <find>CODE_REPLACE</find>
+      <find>synthe</find>
+      <find>option1</find>
+      <find>option2</find>
+      <find>calls</find>
+      <find>print_result</find>
+      <find>put_options</find>
+      <find>puts0</find>
     </findStrings>
     <replaceStrings>
       <replace>put_</replace>
@@ -172,6 +179,12 @@
       <replace>code</replace>
       <replace>month</replace>
       <replace>'  '</replace>
+      <replace>id</replace>
+      <replace>fav_file</replace>
+      <replace>pair[0]</replace>
+      <replace>pair[1]</replace>
+      <replace>self.put_options</replace>
+      <replace>self.puts0</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -185,11 +198,6 @@
         <option value="$PROJECT_DIR$/stagnant.py" />
         <option value="$PROJECT_DIR$/bullish.py" />
         <option value="$PROJECT_DIR$/bearish.py" />
-        <option value="$PROJECT_DIR$/analyze/bullish.py" />
-        <option value="$PROJECT_DIR$/analyze/bearish.py" />
-        <option value="$PROJECT_DIR$/analyze/stagnant.py" />
-        <option value="$PROJECT_DIR$/analyze/volatile.py" />
-        <option value="$PROJECT_DIR$/scrap.py" />
         <option value="$PROJECT_DIR$/StockDTO.py" />
         <option value="$PROJECT_DIR$/IndexDTO.py" />
         <option value="$PROJECT_DIR$/index_scrap.py" />
@@ -198,21 +206,41 @@
         <option value="$PROJECT_DIR$/analyze/run.py" />
         <option value="$PROJECT_DIR$/model/DividentDTO.py" />
         <option value="$PROJECT_DIR$/model/DividendDTO.py" />
-        <option value="$PROJECT_DIR$/info/index_scrap.py" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/info/divident_scrap.py" />
         <option value="$PROJECT_DIR$/util/common.py" />
-        <option value="$PROJECT_DIR$/Util.py" />
         <option value="$PROJECT_DIR$/info/favorites.txt" />
+        <option value="$PROJECT_DIR$/model/IndexDTO.py" />
+        <option value="$PROJECT_DIR$/news/grap_news.py" />
+        <option value="$PROJECT_DIR$/Util.py" />
+        <option value="$PROJECT_DIR$/analyze/__init__.py" />
+        <option value="$PROJECT_DIR$/analyze/AnalyzeResult.py" />
+        <option value="$PROJECT_DIR$/model/OptionDTO.py" />
+        <option value="$PROJECT_DIR$/scrap.py" />
+        <option value="$PROJECT_DIR$/logbook/StockHoldDTO.py" />
+        <option value="$PROJECT_DIR$/logbook/stock.txt" />
+        <option value="$PROJECT_DIR$/logbook/stock.json" />
+        <option value="$PROJECT_DIR$/info/index_scrap.py" />
         <option value="$PROJECT_DIR$/info/my_favorite_scrap.py" />
+        <option value="$PROJECT_DIR$/schtask.py" />
+        <option value="$PROJECT_DIR$/util/stock.py" />
+        <option value="$PROJECT_DIR$/info/holding_record.py" />
+        <option value="$PROJECT_DIR$/logbook/__init__.py" />
+        <option value="$PROJECT_DIR$/logbook/CRUD.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/analyze/bearish.py" />
+        <option value="$PROJECT_DIR$/analyze/bullish.py" />
+        <option value="$PROJECT_DIR$/analyze/Strategy.py" />
+        <option value="$PROJECT_DIR$/analyze/volatile.py" />
+        <option value="$PROJECT_DIR$/analyze/analyze.py" />
+        <option value="$PROJECT_DIR$/analyze/stagnant.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="3" />
-    <option name="width" value="1036" />
-    <option name="height" value="733" />
+    <option name="x" value="280" />
+    <option name="y" value="209" />
+    <option name="width" value="1300" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -230,7 +258,7 @@
             <path>
               <item name="OptionAnalyzer" type="b2602c69:ProjectViewProjectNode" />
               <item name="OptionAnalyzer" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="analyze" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -240,18 +268,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/info/my_favorite_scrap.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\programs\OptionAnalyzer" />
+      <recent name="C:\workspace\programs\OptionAnalyzer\util" />
+      <recent name="C:\workspace\programs\OptionAnalyzer\model" />
+      <recent name="C:\workspace\programs\OptionAnalyzer\analyze" />
+      <recent name="C:\workspace\programs\OptionAnalyzer\info" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\programs\OptionAnalyzer" />
       <recent name="C:\workspace\OptionAnalyzer\info" />
       <recent name="C:\workspace\OptionAnalyzer\analyze" />
       <recent name="C:\workspace\OptionAnalyzer\model" />
       <recent name="C:\workspace\OptionAnalyzer" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspace\OptionAnalyzer\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,7 +299,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.show_fav_stocks">
+  <component name="RunManager" selected="Python.stagnant">
+    <configuration name="Strategy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyze" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze/Strategy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="analyze" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="OptionCalculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,40 +342,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="divi_scrap" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="bullish" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OptionCalculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\eric_cl_ho\AppData\Local\Programs\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/info" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyze" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/info/divident_scrap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hsi" type="PythonConfigurationType" factoryName="Python">
-      <module name="OptionCalculator" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\eric_cl_ho\AppData\Local\Programs\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\workspace\OptionAnalyzer\info\index_scrap.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze/bullish.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,11 +371,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\eric_cl_ho\AppData\Local\Programs\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyze" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\workspace\OptionAnalyzer\run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schtask" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/schtask.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -372,6 +426,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="show_divi_scrap" type="PythonConfigurationType" factoryName="Python">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\eric_cl_ho\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/info" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/info/divident_scrap.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="show_fav_stocks" type="PythonConfigurationType" factoryName="Python">
       <module name="OptionCalculator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -393,14 +468,91 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="show_hsi" type="PythonConfigurationType" factoryName="Python">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\eric_cl_ho\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/info/index_scrap.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="stagnant" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyze" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze/stagnant.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="volatile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OptionCalculator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/analyze" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analyze/volatile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.analyze" />
-      <item itemvalue="Python.divi_scrap" />
-      <item itemvalue="Python.hsi" />
-      <item itemvalue="Python.show_fav_stocks" />
       <item itemvalue="Python.run" />
       <item itemvalue="Python.scrap" />
+      <item itemvalue="Python.show_divi_scrap" />
+      <item itemvalue="Python.show_fav_stocks" />
+      <item itemvalue="Python.show_hsi" />
+      <item itemvalue="Python.schtask" />
+      <item itemvalue="Python.Strategy" />
+      <item itemvalue="Python.volatile" />
+      <item itemvalue="Python.bullish" />
+      <item itemvalue="Python.stagnant" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.stagnant" />
+        <item itemvalue="Python.bullish" />
+        <item itemvalue="Python.volatile" />
+        <item itemvalue="Python.Strategy" />
+        <item itemvalue="Python.schtask" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -413,6 +565,28 @@
       <option name="presentableId" value="Default" />
       <updated>1559618868970</updated>
     </task>
+    <task id="LOCAL-00001" summary="get news feature">
+      <created>1566358728305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566358728305</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add &amp; delete favorite stock">
+      <created>1566448872983</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566448872983</updated>
+    </task>
+    <task id="LOCAL-00003" summary="stock grap update">
+      <created>1567655693218</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567655693260</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -428,18 +602,18 @@
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49908924" visible="true" weight="0.24960254" />
-      <window_info id="Structure" order="1" sideWeight="0.50091076" side_tool="true" weight="0.25079617" />
-      <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.25079617" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49775112" visible="true" weight="0.24960254" />
+      <window_info id="Structure" order="1" sideWeight="0.5022489" side_tool="true" weight="0.24960254" />
+      <window_info id="Favorites" order="2" sideWeight="0.5022489" side_tool="true" weight="0.24960254" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38062283" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298731" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26643598" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39907727" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32967034" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2452381" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.36190477" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.24452133" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.23068051" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -460,7 +634,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="udate" />
     <MESSAGE value="dividend" />
-    <option name="LAST_COMMIT_MESSAGE" value="dividend" />
+    <MESSAGE value="get news feature" />
+    <MESSAGE value="Add &amp; delete favorite stock" />
+    <MESSAGE value="stock grap update" />
+    <option name="LAST_COMMIT_MESSAGE" value="stock grap update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
@@ -484,74 +661,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/bullish.py">
+    <entry file="file://$PROJECT_DIR$/favorite.txt" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5700">
+          <caret line="324" column="8" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/stagnant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/util/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/volatile.py">
+    <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" selection-start-column="5" selection-end-column="12" />
+          <caret selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/OptionDTO.py">
+    <entry file="file://$PROJECT_DIR$/model/StockDTO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="76">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/analyze.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/newsapi/newsapi_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="418">
+          <caret line="31" column="98" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/analyze/AnalyzeResult.py" />
+    <entry file="file://$PROJECT_DIR$/info/show_options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="18" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/bearish.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/IndexDTO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-end-line="15" />
+        <state relative-caret-position="133">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info/show_options.py">
+    <entry file="file://$PROJECT_DIR$/Util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="247">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logbook/holdings.txt" />
     <entry file="file://$PROJECT_DIR$/info/divident_scrap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -562,93 +733,232 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info/index_scrap.py">
+    <entry file="file://$PROJECT_DIR$/info/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="38">
+          <caret line="3" column="23" selection-end-line="3" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/urllib/request.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5700">
-          <caret line="324" column="8" selection-start-line="324" selection-start-column="8" selection-end-line="324" selection-end-column="8" />
+        <state relative-caret-position="-734">
+          <caret line="298" column="4" selection-start-line="298" selection-start-column="4" selection-end-line="298" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Util.py">
+    <entry file="file://$PROJECT_DIR$/logbook/options.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="194">
+          <caret line="336" selection-start-line="336" selection-end-line="336" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/DividendDTO.py">
+    <entry file="file://$PROJECT_DIR$/logbook/StockHoldDTO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="14" />
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favorites.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="28" selection-end-line="28" />
+        <state relative-caret-position="152">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logbook/stock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/index_scrap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logbook/CRUD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="3" column="82" lean-forward="true" selection-start-line="3" selection-start-column="82" selection-end-line="3" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logbook/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news/grap_news.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="81" column="32" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/DividendDTO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="15" selection-start-line="4" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info/my_favorite_scrap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schtask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="4" column="12" selection-start-line="4" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scrap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        <state relative-caret-position="238">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="21" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/favorite.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/StockDTO.py">
+    <entry file="file://$PROJECT_DIR$/info/holding_record.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/favorites.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/info/my_favorite_scrap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="448">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/OptionDTO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/bearish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/bullish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/Strategy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/volatile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="103" selection-start-line="103" selection-end-line="105" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/analyze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="347" column="77" lean-forward="true" selection-start-line="347" selection-start-column="32" selection-end-line="347" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/stagnant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="116" column="38" lean-forward="true" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>

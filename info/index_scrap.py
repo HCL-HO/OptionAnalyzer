@@ -28,4 +28,4 @@ def show_hsi():
     scrap().print()
 
 
-show_hsi()
+# show_hsi()

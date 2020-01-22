@@ -1,7 +1,6 @@
 from typing import List
 
 from scrap import scrap
-from Util import *
 from OptionDTO import *
 
 config = {
@@ -75,6 +74,7 @@ def bear_call_spread(code, month):
                 options = [option1, option2]
                 print_result(options, str(premium), str(even_price), str(-even_price), str(loss_max), str(win_max),
                              str(loss_max / win_max))
+                # print('Position from even: ' + str(float(stock.price) - even_price))
 
 
 def bull_call_spread(code, month):
@@ -199,8 +199,8 @@ def synthetic_short_stock(code, month):
             for put in put_options:
                 if put.get_price() != '':
                     if put.strike == call.strike:
-                        premium = float(put.get_price()) - float(call.get_price())
-                        even_price = float(put.strike) - float(premium)
+                        premium = float(call.get_price()) - float(put.get_price())
+                        even_price = float(put.strike) + float(premium)
                         loss_max = 'any above ' + str(even_price)
                         win_max = 'any below ' + str(even_price)
                         call.position = OptionPosition.SHORT
@@ -453,13 +453,6 @@ def long_straddle(code, month):
                     even_price = str(lower_limit) + ' to ' + str(upper_limit)
                     win_max = 'any below: ' + str(lower_limit) + ' and any above: ' + str(upper_limit)
                     loss_max = premium
-                    # print('long call : ' + str(call))
-                    # print('long put: ' + str(put))
-                    # print('premium: ' + str(premium))
-                    # print('break even: ' + str(even_price))
-                    # print('max_loss: ' + str(loss_max))
-                    # print('max_win: ' + str(win_max))
-                    # print('\n')
                     call.position = OptionPosition.LONG
                     put.position = OptionPosition.LONG
                     options = [call, put]

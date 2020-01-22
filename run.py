@@ -9,10 +9,10 @@ from show_options import show_options
 # code = 'TCH'
 # code = 'HKB'
 # code = 'MET'
-code = 'MTR'
-# code = 'CNC'
-# code = 'CNC'
-month = '201912'
+# code = 'SAN'
+code = 'CNC'
+# code = 'BYD'
+month = '202001'
 # month = '201907'bear_put_spread
 
 # volatile(code, month)

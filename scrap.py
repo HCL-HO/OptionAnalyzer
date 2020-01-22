@@ -96,21 +96,32 @@ def get_stock(body):
     return Stock(price, high, low, turnover, chg, m_high, m_low)
 
 
+cache = {
+    'codemonth': '',
+    'data': dict
+}
+
+
 def scrap(code, month):
-    scrap_url = url.replace(TAG_STOCK_CODE, code)
-    scrap_url = scrap_url.replace(TAG_MONTH, month)
-    body = open_site(scrap_url)
-    table = body.find("table", id="content")
-    options_result = ''
-    if table is not None and table is not '':
-        options_result = get_options(table)
+    if code + month == cache['codemonth']:
+        return cache['data']
     else:
-        print('no table')
-    stock_result = get_stock(body)
-    result = dict()
-    result['option'] = options_result
-    result['stock'] = stock_result
-    # print_class(result)
-    return result
+        scrap_url = url.replace(TAG_STOCK_CODE, code)
+        scrap_url = scrap_url.replace(TAG_MONTH, month)
+        body = open_site(scrap_url)
+        table = body.find("table", id="content")
+        options_result = ''
+        if table is not None and table is not '':
+            options_result = get_options(table)
+        else:
+            print('no table')
+        stock_result = get_stock(body)
+        result = dict()
+        result['option'] = options_result
+        result['stock'] = stock_result
+        # print_class(result)
+        cache['codemonth'] = code + month
+        cache['data'] = result
+        return result
 
 # scrap('CNC', '201906')
