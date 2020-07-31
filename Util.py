@@ -1,5 +1,6 @@
 import urllib
 import json
+from http.client import IncompleteRead
 from urllib.error import HTTPError
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -41,7 +42,10 @@ def open_site(site):
     try:
         print(site)
         r = urllib.request.Request(site, headers={'User-Agent': 'Mozilla/5.0'})
-        page = urlopen(r)
+        try:
+            page = urlopen(r).read()
+        except IncompleteRead as e:
+            page = e.partial
         soup = BeautifulSoup(page, features="html.parser")
         # body_instance = soup
         # site_instance = site

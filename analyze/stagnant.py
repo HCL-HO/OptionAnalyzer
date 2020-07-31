@@ -4,10 +4,10 @@ from copy import *
 
 
 def stagnant(code, month):
-    long_call_calendar_spread(code, month)
-    long_put_calendar_spread(code, month)
-    short_straddle(code, month)
-    short_strangle(code, month)
+    LongCallCalendarSpread(code, month)
+    LongPutCalendarSpread(code, month)
+    ShortStraddle(code, month)
+    ShortStrangle(code, month)
     short_call_w_asset(code, month)
 
 
@@ -165,7 +165,7 @@ class LongCallCalendarSpread(CalendarStrategy):
 
 
 # LongCallCalendarSpread('CNC', '202002').analyze()
-ShortStrangle('CNC', '202002').analyze()
+# ShortStrangle('CNC', '202002').analyze()
 # code_input = sys.argv[1]
 # month_input = sys.argv[2]
 # stagnant(code_input, month_input)

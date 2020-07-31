@@ -1,10 +1,19 @@
 from Strategy import *
+from copy import copy
 
 
 def bearish(code, month):
-    BearPutSpread(code, month)
-    BearCallSpread(code, month)
-    SyntheticShortStock(code, month)
+    BearPutSpread(code, month).analyze()
+    BearCallSpread(code, month).analyze()
+    SyntheticShortStock(code, month).analyze()
+
+
+def bearish_out(code, month) -> str:
+    out = ""
+    out += BearPutSpread(code, month).output()
+    out += BearCallSpread(code, month).output()
+    out += SyntheticShortStock(code, month).output()
+    return out
 
 
 # Bearish
@@ -64,7 +73,7 @@ class BearCallSpread(Strategy):
                 if num2 > num:
                     option2 = self.call_options[num2]
                     option2.position = OptionPosition.LONG
-                    pairs.append([option1, option2])
+                    pairs.append([copy(option1), copy(option2)])
         return pairs
 
     def get_even_price(self, pair: List):
@@ -102,7 +111,7 @@ class BearPutSpread(Strategy):
                 if num2 > num:
                     option2 = self.put_options[num2]
                     option2.position = OptionPosition.LONG
-                    pair.append([option1, option2])
+                    pair.append([copy(option1), copy(option2)])
         return pair
 
     def get_even_price(self, pair: List):

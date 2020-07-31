@@ -4,9 +4,9 @@ import copy
 
 
 def bullish(code, month):
-    bull_call_spread(code, month)
-    bull_put_spread(code, month)
-    synthetic_long_stock(code, month)
+    BullCallSpread(code, month).analyze()
+    BullPutSpread(code, month).analyze()
+    SyntheticLong(code, month).analyze()
 
 
 class SyntheticLong(Strategy):
@@ -133,7 +133,7 @@ class BullCallSpread(Strategy):
         return self.default_loss_win_ratio(pair)
 
 
-SyntheticLong('CNC', '202001').analyze()
+# SyntheticLong('CNC', '202001').analyze()
 # BullCallSpread('CNC', '202001').analyze()
 # code_input = sys.argv[1]
 # month_input = sys.argv[2]
