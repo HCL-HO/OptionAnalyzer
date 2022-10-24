@@ -8,12 +8,12 @@ def bearish(code, month):
     SyntheticShortStock(code, month).analyze()
 
 
-def bearish_out(code, month) -> str:
-    out = ""
-    out += BearPutSpread(code, month).output()
-    out += BearCallSpread(code, month).output()
-    out += SyntheticShortStock(code, month).output()
-    return out
+# def bearish_out(code, month) -> str:
+#     out = ""
+#     out += BearPutSpread(code, month).output()
+#     out += BearCallSpread(code, month).output()
+#     out += SyntheticShortStock(code, month).output()
+#     return out
 
 
 # Bearish

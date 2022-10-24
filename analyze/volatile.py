@@ -2,10 +2,10 @@ from Strategy import *
 
 
 def volatile(code, month):
-    ShortCallCalendarSpread(code, month)
-    ShortPutCalendarSpread(code, month)
-    LongStangle(code, month)
-    LongStraddle(code, month)
+    ShortCallCalendarSpread(code, month).analyze()
+    ShortPutCalendarSpread(code, month).analyze()
+    LongStangle(code, month).analyze()
+    LongStraddle(code, month).analyze()
 
 
 # Volatile

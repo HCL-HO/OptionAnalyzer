@@ -25,22 +25,27 @@ class Strategy(ABC):
             self.stock = result['stock']
             self.pairs = self.get_pairs()
 
+    # pair up all combination of options
     @abstractmethod
     def get_pairs(self):
         pass
 
+    # The price at which the strategy can get even
     @abstractmethod
     def get_even_price(self, pair: List):
         pass
 
+    # The maximum at which the strategy can win
     @abstractmethod
     def get_max_win(self, pair: List):
         pass
 
+    # The maximum loss can be caused by one unit of investment
     @abstractmethod
     def get_max_loss(self, pair: List):
         pass
 
+    # The maximum loss can be caused by one unit of investment
     @abstractmethod
     def get_credit(self, pair: List):
         pass
@@ -48,23 +53,7 @@ class Strategy(ABC):
     # Net Cash Inflow
     def get_premium(self, pair: List):
         return float(self.stock.price) - float(self.get_even_price(pair))
-
-    @staticmethod
-    def format_analytic_str(options: List[Option], premium: str, even_price: str, win_at: str, max_loss: str,
-                            max_win: str, max_loss_to_max_win: str) -> str:
-        result = ''
-        for option in options:
-            # result = result + option.position.value + ' ' + option.m_type.value
-            result = result + option.__str__() + '\n'
-        result = result + 'premium: ' + str(premium) + '\n'
-        result = result + 'even price: ' + str(even_price) + '\n'
-        result = result + 'win at: ' + str(win_at) + '\n'
-        result = result + 'max_loss: ' + str(max_loss) + '\n'
-        result = result + 'max_win: ' + str(max_win) + '\n'
-        result = result + 'max_loss_to_max_win: ' + max_loss_to_max_win + '\n'
-        result = result + '\n---------------------------------------------------------------------------' + '\n'
-        result = result + '\n'
-        return result
+    #
 
     @staticmethod
     def format_analytic_str2(trade_position: dict):
@@ -82,6 +71,7 @@ class Strategy(ABC):
         #                                     str(self.get_max_loss(pair)), str(self.get_max_win(pair)),
         #                                     str(self.get_loss_win_ratio(pair)))
 
+    # get the strategy information and return a dict
     def get_trade_position(self, pair) -> dict:
         trade_position = dict()
         options = dict()
@@ -109,12 +99,12 @@ class Strategy(ABC):
         print(self.__class__.__name__ + '\n')
         print(self.get_analytic_str(pair))
 
-    def output(self) -> str:
-        out_text = ""
-        out_text += self.__class__.__name__ + '\n'
-        for pair in self.pairs:
-            out_text += self.get_analytic_str(pair)
-        return out_text
+    # def output(self) -> str:
+    #     out_text = ""
+    #     out_text += self.__class__.__name__ + '\n'
+    #     for pair in self.pairs:
+    #         out_text += self.get_analytic_str(pair)
+    #     return out_text
 
     @abstractmethod
     def get_loss_win_ratio(self, pair):
