@@ -124,4 +124,5 @@ def scrap(code, month):
         cache['data'] = result
         return result
 
-# scrap('CNC', '201906')
+
+print(scrap('CNC', '202009'))

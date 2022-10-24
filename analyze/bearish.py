@@ -89,7 +89,10 @@ class BearCallSpread(Strategy):
         return float(pair[0].get_price()) - float(pair[1].get_price())
 
     def get_loss_win_ratio(self, pair):
-        return str(self.get_max_loss(pair) / self.get_max_win(pair))
+        if self.get_max_win(pair) > 0:
+            return str(self.get_max_loss(pair) / self.get_max_win(pair))
+        else:
+            return NA
 
 
 class BearPutSpread(Strategy):
@@ -127,6 +130,8 @@ class BearPutSpread(Strategy):
         return float(pair[1].get_price()) - float(pair[0].get_price())
 
     def get_loss_win_ratio(self, pair):
+        if self.get_max_win(pair) == 0:
+            return ""
         return str(self.get_max_loss(pair) / self.get_max_win(pair))
 
 # code_input = sys.argv[1]

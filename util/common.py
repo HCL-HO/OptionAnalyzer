@@ -26,3 +26,16 @@ def write_output_to_file(result, file):
 
 def load_array_from_file(COMPUTERS_FILE, DELIMINATOR) -> List[str]:
     return get_text_from_file_in_str(COMPUTERS_FILE).split(DELIMINATOR)
+
+
+def dict_prettify(d, indent=0):
+    result = ''
+    for key, value in d.items():
+        result += '\t' * indent + str(key)
+        if isinstance(value, dict):
+            result += '\n'
+            result += dict_prettify(value, indent)
+        else:
+            result += '\t' * (indent + 1) + str(value) + '\n'
+
+    return result

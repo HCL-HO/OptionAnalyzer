@@ -3,12 +3,15 @@ from typing import List
 from scrap import scrap
 from OptionDTO import *
 from stock import get_stock
+from common import dict_prettify
 
 NA = 'N/A'
 
 
+# Abstract Class of Trading Strategies
 class Strategy(ABC):
-
+    # Parms: month, stock code
+    # Web Scrap Options Listing in constructor
     @abstractmethod
     def __init__(self, code, month=None):
         self.code = code
@@ -42,6 +45,7 @@ class Strategy(ABC):
     def get_credit(self, pair: List):
         pass
 
+    # Net Cash Inflow
     def get_premium(self, pair: List):
         return float(self.stock.price) - float(self.get_even_price(pair))
 
@@ -50,7 +54,7 @@ class Strategy(ABC):
                             max_win: str, max_loss_to_max_win: str) -> str:
         result = ''
         for option in options:
-            result = result + option.position.value + ' ' + option.m_type.value
+            # result = result + option.position.value + ' ' + option.m_type.value
             result = result + option.__str__() + '\n'
         result = result + 'premium: ' + str(premium) + '\n'
         result = result + 'even price: ' + str(even_price) + '\n'
@@ -62,11 +66,35 @@ class Strategy(ABC):
         result = result + '\n'
         return result
 
+    @staticmethod
+    def format_analytic_str2(trade_position: dict):
+        result = ''
+        result = result + dict_prettify(trade_position)
+        result = result + '\n---------------------------------------------------------------------------' + '\n'
+        result = result + '\n'
+        return result
+
     def get_analytic_str(self, pair) -> str:
-        return Strategy.format_analytic_str(pair, str(self.get_credit(pair)), str(self.get_even_price(pair)),
-                                            str(self.get_even_price(pair)),
-                                            str(self.get_max_loss(pair)), str(self.get_max_win(pair)),
-                                            str(self.get_loss_win_ratio(pair)))
+        trade_positions = self.get_trade_position(pair)
+        return Strategy.format_analytic_str2(trade_positions)
+        # return Strategy.format_analytic_str(pair, str(self.get_credit(pair)), str(self.get_even_price(pair)),
+        #                                     str(self.get_even_price(pair)),
+        #                                     str(self.get_max_loss(pair)), str(self.get_max_win(pair)),
+        #                                     str(self.get_loss_win_ratio(pair)))
+
+    def get_trade_position(self, pair) -> dict:
+        trade_position = dict()
+        options = dict()
+        for option in pair:
+            options[option.position.value + '_' + option.m_type.value] = option.__str__()
+        trade_position['options'] = options
+        trade_position['even_price'] = self.get_even_price(pair)
+        trade_position['max_loss'] = self.get_max_loss(pair)
+        trade_position['max_win'] = self.get_max_win(pair)
+        trade_position['loss_to_win'] = self.get_loss_win_ratio(pair)
+        print('trade_position')
+        print(trade_position)
+        return trade_position
 
     def default_loss_win_ratio(self, pair):
         return str(self.get_max_loss(pair) / self.get_max_win(pair))
